@@ -1,0 +1,203 @@
+{
+    "minimum_window_width": 0,
+    "minimum_window_height": 0,
+    "resize_delta": 50,
+    "window_container_behaviour": "Create",
+    "float_override": false,
+    "cross_monitor_move_behaviour": "Insert",
+    "cross_boundary_behaviour": "Monitor",
+    "unmanaged_window_operation_behaviour": "Op",
+    "mouse_follows_focus": true,
+    "border_width": 5,
+    "border_offset": -1,
+    "border": true,
+    "border_colours": {
+      "single": {
+        "r": 174,
+        "g": 149,
+        "b": 199
+      },
+      "stack": {
+        "r": 149,
+        "g": 199,
+        "b": 174
+      },
+      "monocle": {
+        "r": 199,
+        "g": 149,
+        "b": 149
+      },
+      "floating": {
+        "r": 199,
+        "g": 199,
+        "b": 149
+      },
+      "unfocused": {
+        "r": 116,
+        "g": 124,
+        "b": 132
+      }
+    },
+    "border_style": "System",
+    "border_implementation": "Komorebi",
+    "transparency": false,
+    "transparency_alpha": 200,
+    "default_workspace_padding": 20,
+    "default_container_padding": 20,
+    "monitors": [
+      {
+        "workspaces": [
+          {
+            "name": "Working 💻",
+            "layout": "BSP",
+            "layout_rules": {},
+            "container_padding": 1,
+            "workspace_padding": 0,
+            "apply_window_based_work_area_offset": true,
+            "window_container_behaviour_rules": {}
+          },
+          {
+            "name": "Chilling 😎",
+            "layout": "BSP",
+            "layout_rules": {},
+            "apply_window_based_work_area_offset": true,
+            "window_container_behaviour_rules": {}
+          },
+          {
+            "name": "Hack 😴",
+            "layout": "BSP",
+            "layout_rules": {},
+            "apply_window_based_work_area_offset": true,
+            "window_container_behaviour_rules": {}
+          }
+        ],
+        "window_based_work_area_offset_limit": 1
+      }
+    ],
+    "window_hiding_behaviour": "Cloak",
+    "object_name_change_applications": [
+      {
+        "kind": "Exe",
+        "id": "firefox.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "idea64.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "studio64.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "clion64.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "datagrip64.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "goland64.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "Godot_v",
+        "matching_strategy": "StartsWith"
+      },
+      {
+        "kind": "Exe",
+        "id": "GodotManager.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "jetbrains_client64.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "soffice.bin",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "ManicTimeClient.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Class",
+        "id": "TeamsWebView",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "phpstorm64.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "pycharm64.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "rider64.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "rustrover64.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "devenv.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "webstorm64.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "zen.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Class",
+        "id": "mpv",
+        "matching_strategy": "Legacy"
+      },
+      {
+        "kind": "Exe",
+        "id": "mpvnet.exe",
+        "matching_strategy": "Equals"
+      }
+    ],
+    "object_name_change_title_ignore_list": [],
+    "monitor_index_preferences": {},
+    "display_index_preferences": {},
+    "slow_application_identifiers": [
+      {
+        "kind": "Exe",
+        "id": "firefox.exe",
+        "matching_strategy": "Equals"
+      },
+      {
+        "kind": "Exe",
+        "id": "zen.exe",
+        "matching_strategy": "Equals"
+      }
+    ],
+    "slow_application_compensation_time": 20,
+    "remove_titlebar_applications": [],
+    "floating_window_aspect_ratio": "Standard"
+  }
