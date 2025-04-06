@@ -18,3 +18,13 @@ komorebic container-padding 1 1 1
 komorebic workspace-padding 1 1 0
 komorebic container-padding 1 2 1
 komorebic workspace-padding 1 2 0
+
+# Monitor 2
+komorebic container-padding 2 0 1
+komorebic workspace-padding 2 0 0
+komorebic container-padding 2 1 1
+komorebic workspace-padding 2 1 0
+komorebic container-padding 2 2 1
+komorebic workspace-padding 2 2 0
+
+yasb start
