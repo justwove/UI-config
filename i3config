@@ -1,0 +1,171 @@
+cat .config/i3/config                                                                                                                                                                                ✔ 
+### i3 Configuration complète fusionnée avec les raccourcis WHKD et commentaires en français
+
+# Définition de la touche modificateur principale (Super)
+set $mod Mod4
+
+# Démarrage automatique d'applications au lancement d'i3
+#exec --no-startup-id picom --backend xrender &
+exec --no-startup-id nm-applet &
+exec --no-startup-id volumeicon &
+exec --no-startup-id blueman-applet &
+exec --no-startup-id flameshot &
+
+set $refresh_i3status killall -SIGUSR1 i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
+
+# start a terminal
+bindsym $mod+Return exec shell_wrapper.sh
+
+bindsym $mod+d exec --no-startup-id dmenu_wrapper.sh
+
+
+
+# Bordure des fenêtres
+new_window pixel 2
+new_float pixel 2
+
+# Police
+font pango:monospace 10
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Explorateur de fichier
+bindsym $mod+e exec thunar
+
+
+# Utiliser la touche mod pour déplacer entre les fenêtres
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+#bindsym $mod+l focus right
+
+# Flèches directionnelles comme alternative
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Déplacement des fenêtres
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Déplacement avec flèches
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Centrer une fenêtre
+bindsym $mod+Shift+Return move position center
+
+# Redimensionnement des fenêtres
+bindsym $mod+o resize grow width 10 px
+bindsym $mod+p resize shrink width 10 px
+bindsym $mod+u resize grow height 10 px
+bindsym $mod+i resize shrink height 10 px
+
+# Basculer une fenêtre en mode flottant
+bindsym $mod+t floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Basculer en plein écran
+bindsym $mod+f fullscreen toggle
+
+# Recharger la configuration d’i3
+bindsym $mod+Shift+r restart
+
+# Quitter i3 (fermer la session)
+bindsym $mod+Shift+e exit
+
+# Tuer une fenêtre (fermer l’application active)
+bindsym $mod+q kill
+
+# Minimiser une fenêtre (implémentation personnalisée)
+bindsym $mod+m move scratchpad
+
+# Afficher/masquer la scratchpad
+bindsym $mod+Shift+m scratchpad show
+
+# Inverser les layouts horizontal/vertical
+bindsym $mod+x layout toggle split
+
+# split in horizontal orientation
+bindsym Mod1+h split h
+
+# split in vertical orientation
+bindsym Mod1+v split v
+
+# Passer au layout stacking (empilement)
+bindsym $mod+y layout stacking
+
+# Workspaces : changer de bureau
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+
+# Workspaces : déplacer une fenêtre sur un autre bureau
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+
+# Naviguer entre les fenêtres dans un conteneur
+bindsym $mod+Shift+bracketleft focus left
+bindsym $mod+Shift+bracketright focus right
+
+# Lancement de terminal
+#bindsym $mod+Return exec alacritty
+
+# Lancement de Opera
+bindsym $mod+b exec opera
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status_wrapper.sh
+        position top
+}
+
+# reload the configuration file
+bindsym Mod1+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod1+Shift+r restart
+
+# Verrouiller l’écran (exemple avec i3lock)
+bindsym $mod+l exec i3lock -c 000000
+
+bindsym $mod+Shift+o exec select_env.sh prev
+bindsym $mod+Shift+p exec select_env.sh next
+
+bindsym $mod+s exec /usr/bin/flameshot gui
